@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="JDA Developer Portfolio"
+    >
+
+    <meta
+        name="theme-color"
+        content="#12060f"
+    >
+
+    <title>JDA | Developer Portfolio</title>
+
+    <!-- Lets the CSS know JavaScript is running (used for reveal animations) -->
+    <script>
+        document.documentElement.classList.add('js');
+    </script>
+
+
+    <!-- =========================================
+         GOOGLE FONTS
+         Bodoni Moda   -> giant hero word
+         Cormorant     -> headings, titles & numbers
+         DM Sans       -> small text & labels
+    ========================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================
+         FONT AWESOME
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =========================================
+         CSS
+         index.html is inside /html
+         css is one folder above
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         ART-DECO ORNAMENTS (drawn in SVG and
+         reused across the page)
+    ========================================== -->
+
+    <svg
+        width="0"
+        height="0"
+        style="position:absolute;overflow:hidden"
+        aria-hidden="true"
+        focusable="false"
+    >
+
+        <defs>
+
+            <!-- Sunburst fan -->
+            <symbol
+                id="deco-fan"
+                viewBox="0 0 120 64"
+            >
+
+                <g
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                >
+
+                    <path d="M47.4 58.6L5.9 47.5M48.7 55.5L21.9 40.0M50.8 52.8L20.4 22.4M53.5 50.7L38.0 23.9M56.6 49.4L45.5 7.9M60.0 49.0L60.0 18.0M63.4 49.4L74.5 7.9M66.5 50.7L82.0 23.9M69.2 52.8L99.6 22.4M71.3 55.5L98.1 40.0M72.6 58.6L114.1 47.5"/>
+
+                    <path d="M50 62a10 10 0 0 1 20 0"/>
+
+                    <path d="M2 62H118"/>
+
+                </g>
+
+            </symbol>
+
+
+            <!-- Monogram crest with wings -->
+            <symbol
+                id="crest"
+                viewBox="0 0 240 84"
+            >
+
+                <g
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                >
+
+                    <circle cx="120" cy="46" r="28"/>
+
+                    <circle
+                        cx="120"
+                        cy="46"
+                        r="23"
+                        stroke-opacity=".55"
+                    />
+
+                    <path d="M92.5 26.0L86.0 21.3M104.6 15.7L100.9 8.6M120.0 12.0L120.0 4.0M135.4 15.7L139.1 8.6M147.5 26.0L154.0 21.3"/>
+
+                    <path d="M90 46H36M86 38H52M86 54H52"/>
+
+                    <path d="M150 46H204M154 38H188M154 54H188"/>
+
+                </g>
+
+                <g fill="currentColor">
+
+                    <path d="M25 46l5-5 5 5-5 5z"/>
+
+                    <path d="M205 46l5-5 5 5-5 5z"/>
+
+                </g>
+
+                <text
+                    x="120"
+                    y="52"
+                    text-anchor="middle"
+                    fill="currentColor"
+                    font-family="'Cormorant Garamond', Georgia, serif"
+                    font-size="19"
+                    font-weight="500"
+                    letter-spacing="1.5"
+                >JDA</text>
+
+            </symbol>
+
+        </defs>
+
+    </svg>
+
+
+    <!-- =========================================
+         PAGE LOADER
+    ========================================== -->
+
+    <div
+        class="page-loader"
+        aria-hidden="true"
+    >
+
+        <div class="loader-mark">
+            J
+        </div>
+
+        <div class="loader-line">
+            <span></span>
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         CURSOR GLOW
+    ========================================== -->
+
+    <div
+        class="cursor-glow"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- =========================================
+         HEADER
+         links on the left + right, crest in the middle
+    ========================================== -->
+
+    <header
+        class="site-header"
+        id="top"
+    >
+
+
+        <!-- Navigation -->
+
+        <nav
+            class="main-nav"
+            id="main-nav"
+            aria-label="Main navigation"
+        >
+
+            <div class="nav-group">
+
+                <a href="#home" class="is-active">
+                    Home
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#work">
+                    Work
+                </a>
+
+            </div>
+
+            <div class="nav-group">
+
+                <a href="#skills">
+                    Skills
+                </a>
+
+                <a href="#process">
+                    Process
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <!-- Crest / logo -->
+
+        <a
+            href="#home"
+            class="brand"
+            aria-label="JDA home"
+        >
+
+            <svg
+                class="crest"
+                viewBox="0 0 240 84"
+                aria-hidden="true"
+            >
+                <use href="#crest"/>
+            </svg>
+
+        </a>
+
+
+        <!-- Mobile menu -->
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="main-nav"
+        >
+
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- =========================================
+             HERO SECTION
+        ========================================== -->
+
+        <section
+            class="hero section-shell"
+            id="home"
+            data-spy="home"
+        >
+
+
+            <!-- Hero text -->
+
+            <div class="hero-copy">
+
+
+                <svg
+                    class="deco-fan hero-fan"
+                    aria-hidden="true"
+                >
+                    <use href="#deco-fan"/>
+                </svg>
+
+
+                <h1>
+
+                    <span class="h1-top rose-text">
+                        I BUILD
+                    </span>
+
+                    <span class="h1-big rose-text">
+                        DIGITAL
+                    </span>
+
+                    <span class="h1-bottom rose-text">
+                        EXPERIENCES
+                        <em>THAT WORK.</em>
+                    </span>
+
+                </h1>
+
+
+                <p class="hero-tags">
+                    WEB DEVELOPMENT &nbsp;•&nbsp; SYSTEM DEVELOPMENT &nbsp;•&nbsp; DATABASES
+                </p>
+
+
+                <p class="hero-intro">
+
+                    I'm a developer focused on creating
+                    modern, responsive and purposeful
+                    digital experiences. I enjoy turning
+                    ideas into functional websites,
+                    systems and applications.
+
+                </p>
+
+
+                <a
+                    href="#work"
+                    class="button button-light magnetic"
+                >
+
+                    View my work
+
+                    <span aria-hidden="true">
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Hero visual: YOUR PHOTO goes here -->
+
+            <div class="hero-art">
+
+
+                <div class="arch-wrap">
+
+
+                    <!-- gold arch outlines -->
+                    <span class="arch-line arch-line-1"></span>
+                    <span class="arch-line arch-line-2"></span>
+
+
+                    <div class="arch">
+
+                        <!--
+                            Your photo:
+                            /css/jda.png  ->  ../css/jda.png
+                        -->
+
+                        <img
+                            src="jda.png"
+                            alt="Portrait of JDA"
+                            width="800"
+                            height="1000"
+                            onerror="this.parentElement.classList.add('no-photo');this.remove();"
+                        >
+
+                        <!-- Only shows if the photo can't be found -->
+                        <div class="arch-fallback" aria-hidden="true">
+                            <span>J</span>
+                            <small>Add jda.png to /css</small>
+                        </div>
+
+                    </div>
+
+
+                    <!-- side fans -->
+
+                    <svg
+                        class="deco-fan arch-fan arch-fan-left"
+                        aria-hidden="true"
+                    >
+                        <use href="#deco-fan"/>
+                    </svg>
+
+                    <svg
+                        class="deco-fan arch-fan arch-fan-right"
+                        aria-hidden="true"
+                    >
+                        <use href="#deco-fan"/>
+                    </svg>
+
+
+                    <!-- Rotating seal -->
+
+                    <div class="seal seal-hero" aria-hidden="true">
+
+                        <svg viewBox="0 0 200 200">
+
+                            <defs>
+                                <path
+                                    id="sealPathHero"
+                                    d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"
+                                />
+                            </defs>
+
+                            <g class="seal-ring">
+                                <text>
+                                    <textPath
+                                        href="#sealPathHero"
+                                        textLength="474"
+                                        lengthAdjust="spacing"
+                                    >CODING WITH PURPOSE · DESIGN · LOGIC · </textPath>
+                                </text>
+                            </g>
+
+                            <text
+                                class="seal-center"
+                                x="100"
+                                y="112"
+                                text-anchor="middle"
+                            >&lt;/&gt;</text>
+
+                        </svg>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             ABOUT SECTION  (blush panel)
+        ========================================== -->
+
+        <section
+            class="about section-shell"
+            id="about"
+            data-spy="about"
+        >
+
+            <div class="panel panel-pink about-panel reveal">
+
+
+                <!-- About text -->
+
+                <div class="about-copy">
+
+
+                    <p class="eyebrow">
+                        ABOUT ME
+                    </p>
+
+
+                    <h2>
+
+                        The developer
+                        behind the
+
+                        <em>
+                            code.
+                        </em>
+
+                    </h2>
+
+
+                    <p>
+
+                        I'm a developer who enjoys
+                        transforming ideas and problems
+                        into practical digital solutions.
+                        I work across interfaces, systems
+                        and databases, building applications
+                        that are responsive, organized and
+                        easy to use.
+
+                    </p>
+
+
+                    <p>
+
+                        For me, development isn't only
+                        about writing code. It's about
+                        understanding the problem,
+                        designing the solution and
+                        building something useful.
+
+                    </p>
+
+
+                    <a
+                        href="#skills"
+                        class="button button-dark"
+                    >
+
+                        Explore my skills
+
+                        <span aria-hidden="true">
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- About statistics -->
+
+                <div class="about-cards">
+
+
+                    <article class="mini-card">
+
+                        <span
+                            class="mini-icon"
+                            aria-hidden="true"
+                        >
+                            ✦
+                        </span>
+
+                        <h3>
+                            4+
+                        </h3>
+
+                        <p class="mini-label">
+                            Years Learning
+                        </p>
+
+                        <p>
+                            Exploring and building
+                            with code every day.
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="mini-card">
+
+                        <span
+                            class="mini-icon"
+                            aria-hidden="true"
+                        >
+                            &lt;/&gt;
+                        </span>
+
+                        <h3>
+                            10+
+                        </h3>
+
+                        <p class="mini-label">
+                            Projects Built
+                        </p>
+
+                        <p>
+                            Projects and systems
+                            developed through
+                            practice.
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="mini-card">
+
+                        <span
+                            class="mini-icon"
+                            aria-hidden="true"
+                        >
+                            ∞
+                        </span>
+
+                        <h3 class="mini-title">
+                            Always
+                            <br>
+                            Learning
+                        </h3>
+
+                        <p>
+                            Curiosity for learning
+                            new technologies.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             FEATURED WORK
+        ========================================== -->
+
+        <section
+            class="work section-shell"
+            id="work"
+            data-spy="work"
+        >
+
+
+            <h2 class="deco-title reveal">
+
+                <span class="deco-star" aria-hidden="true">✦</span>
+
+                Featured Work
+
+                <span class="deco-star" aria-hidden="true">✦</span>
+
+            </h2>
+
+
+
+            <div class="tile-grid">
+
+
+                <!-- Project 01 -->
+
+                <article class="tile reveal">
+
+                    <div class="tile-visual">
+
+                        <div class="tile-mark">
+
+                            <small>
+                                PROJECT 01
+                            </small>
+
+                            <strong>
+                                OSSP
+                            </strong>
+
+                            <span>
+                                DOCUMENT TRACKER
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="tile-plaque">
+
+                        <h3>
+                            OSSP Document Tracker
+                        </h3>
+
+                        <p>
+                            Django / AppSheet
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Project 02 -->
+
+                <article class="tile reveal">
+
+                    <div class="tile-visual">
+
+                        <div class="tile-mark">
+
+                            <small>
+                                PROJECT 02
+                            </small>
+
+                            <strong>
+                                B.O.O.M
+                            </strong>
+
+                            <span>
+                                BIOMETRIC MANAGEMENT
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="tile-plaque">
+
+                        <h3>
+                            OSSP B.O.O.M
+                        </h3>
+
+                        <p>
+                            Biometric Operations
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Project 03 -->
+
+                <article class="tile reveal">
+
+                    <div class="tile-visual">
+
+                        <div class="tile-mark">
+
+                            <i aria-hidden="true">
+                                &lt;/&gt;
+                            </i>
+
+                            <strong>
+                                WEBSITE
+                            </strong>
+
+                            <span>
+                                MANAGEMENT
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="tile-plaque">
+
+                        <h3>
+                            OSSP Website
+                        </h3>
+
+                        <p>
+                            Official Website
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Project 04 -->
+
+                <article class="tile reveal">
+
+                    <div class="tile-visual">
+
+                        <div class="tile-mark">
+
+                            <small>
+                                PERSONAL PROJECT
+                            </small>
+
+                            <strong>
+                                YOUR
+                                <br>
+                                PROJECT
+                            </strong>
+
+                            <span>
+                                ADD YOUR NEXT ONE HERE
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="tile-plaque">
+
+                        <h3>
+                            More Projects
+                        </h3>
+
+                        <p>
+                            Web · Systems · Experiments
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             TECHNOLOGY  (black gold-framed band)
+        ========================================== -->
+
+        <section
+            class="skills section-shell"
+            id="skills"
+            data-spy="skills"
+        >
+
+            <div class="tech-band reveal">
+
+
+                <h2 class="deco-title">
+
+                    <span class="deco-star" aria-hidden="true">✦</span>
+
+                    Technology
+
+                    <span class="deco-star" aria-hidden="true">✦</span>
+
+                </h2>
+
+
+                <div class="tech-grid">
+
+
+                    <article class="tech">
+
+                        <span
+                            class="tech-icon"
+                            aria-hidden="true"
+                        >
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </span>
+
+                        <h3>
+                            Frontend Development
+                        </h3>
+
+                        <p>
+                            HTML · CSS · JavaScript ·
+                            Responsive Design
+                        </p>
+
+                    </article>
+
+
+                    <article class="tech">
+
+                        <span
+                            class="tech-icon"
+                            aria-hidden="true"
+                        >
+                            <i class="fa-solid fa-server"></i>
+                        </span>
+
+                        <h3>
+                            Backend Development
+                        </h3>
+
+                        <p>
+                            Python · Django · PHP · C++ · C#
+                        </p>
+
+                    </article>
+
+
+                    <article class="tech">
+
+                        <span
+                            class="tech-icon"
+                            aria-hidden="true"
+                        >
+                            <i class="fa-solid fa-database"></i>
+                        </span>
+
+                        <h3>
+                            Database Development
+                        </h3>
+
+                        <p>
+                            SQL · Data · System Design
+                        </p>
+
+                    </article>
+
+
+                    <article class="tech">
+
+                        <span
+                            class="tech-icon"
+                            aria-hidden="true"
+                        >
+                            <i class="fa-solid fa-toolbox"></i>
+                        </span>
+
+                        <h3>
+                            Development Toolkit
+                        </h3>
+
+                        <p>
+                            Git · GitHub · VS Code ·
+                            Design Tools
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             DEVELOPMENT PROCESS  (blush timeline)
+        ========================================== -->
+
+        <section
+            class="process section-shell"
+            id="process"
+            data-spy="process"
+        >
+
+            <div class="panel panel-pink journey reveal">
+
+
+                <h2 class="deco-title">
+
+                    <span class="deco-star" aria-hidden="true">✦</span>
+
+                    My Development Process
+
+                    <span class="deco-star" aria-hidden="true">✦</span>
+
+                </h2>
+
+
+                <div class="process-list">
+
+
+                    <!-- Step 01 -->
+
+                    <article class="process-step">
+
+                        <span
+                            class="step-node"
+                            aria-hidden="true"
+                        >
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+
+                        <span class="step-num">
+                            01
+                        </span>
+
+                        <h3>
+                            Understand
+                        </h3>
+
+                        <p>
+                            Understand the problem,
+                            requirements, users and
+                            goals before writing code.
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- Step 02 -->
+
+                    <article class="process-step">
+
+                        <span
+                            class="step-node"
+                            aria-hidden="true"
+                        >
+                            <i class="fa-solid fa-compass-drafting"></i>
+                        </span>
+
+                        <span class="step-num">
+                            02
+                        </span>
+
+                        <h3>
+                            Plan
+                        </h3>
+
+                        <p>
+                            Plan the structure,
+                            interface, database and
+                            overall system architecture.
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- Step 03 -->
+
+                    <article class="process-step">
+
+                        <span
+                            class="step-node"
+                            aria-hidden="true"
+                        >
+                            <i class="fa-solid fa-code"></i>
+                        </span>
+
+                        <span class="step-num">
+                            03
+                        </span>
+
+                        <h3>
+                            Develop
+                        </h3>
+
+                        <p>
+                            Turn the concept into
+                            functional, responsive and
+                            maintainable code.
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- Step 04 -->
+
+                    <article class="process-step">
+
+                        <span
+                            class="step-node"
+                            aria-hidden="true"
+                        >
+                            <i class="fa-solid fa-bug"></i>
+                        </span>
+
+                        <span class="step-num">
+                            04
+                        </span>
+
+                        <h3>
+                            Test
+                        </h3>
+
+                        <p>
+                            Debug, test and improve
+                            the system across devices
+                            and different scenarios.
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- Step 05 -->
+
+                    <article class="process-step">
+
+                        <span
+                            class="step-node"
+                            aria-hidden="true"
+                        >
+                            <i class="fa-solid fa-rocket"></i>
+                        </span>
+
+                        <span class="step-num">
+                            05
+                        </span>
+
+                        <h3>
+                            Deploy
+                        </h3>
+
+                        <p>
+                            Launch the project and
+                            continue improving it
+                            through feedback and use.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             SELECTED CASE STUDIES
+        ========================================== -->
+
+        <section
+            class="cases section-shell"
+            id="cases"
+            data-spy="work"
+        >
+
+
+            <h2 class="deco-title reveal">
+
+                <span class="deco-star" aria-hidden="true">✦</span>
+
+                Selected Case Studies
+
+                <span class="deco-star" aria-hidden="true">✦</span>
+
+            </h2>
+
+
+            <div class="case-grid">
+
+
+                <!-- Case 01 -->
+
+                <article class="case case-wine reveal">
+
+                    <div class="case-copy">
+
+                        <h3>
+                            OSSP
+                            <br>
+                            Document Tracker
+                        </h3>
+
+                        <p>
+                            A digital document management
+                            system built with Django and
+                            AppSheet.
+                        </p>
+
+                        <a
+                            href="#work"
+                            class="case-link"
+                        >
+
+                            VIEW PROJECT
+
+                            <span aria-hidden="true">
+                                →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                    <div
+                        class="case-visual"
+                        aria-hidden="true"
+                    >
+
+                        <div class="mock mock-light">
+
+                            <div class="mock-bar">
+                                <i></i><i></i><i></i>
+                            </div>
+
+                            <div class="mock-body">
+
+                                <div class="mock-row">
+                                    <span></span><em></em>
+                                </div>
+
+                                <div class="mock-row">
+                                    <span></span><em></em>
+                                </div>
+
+                                <div class="mock-row">
+                                    <span></span><em></em>
+                                </div>
+
+                                <div class="mock-row">
+                                    <span></span><em></em>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Case 02 -->
+
+                <article class="case case-pink reveal">
+
+                    <div class="case-copy">
+
+                        <h3>
+                            OSSP
+                            <br>
+                            B.O.O.M
+                        </h3>
+
+                        <p>
+                            Biometric Office Operations
+                            and Monitoring.
+                        </p>
+
+                        <a
+                            href="#work"
+                            class="case-link"
+                        >
+
+                            VIEW PROJECT
+
+                            <span aria-hidden="true">
+                                →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                    <div
+                        class="case-visual"
+                        aria-hidden="true"
+                    >
+
+                        <div class="mock mock-dark">
+
+                            <div class="mock-bar">
+                                <i></i><i></i><i></i>
+                            </div>
+
+                            <div class="mock-body">
+
+                                <div class="mock-finger"></div>
+
+                                <div class="mock-row">
+                                    <span></span><em></em>
+                                </div>
+
+                                <div class="mock-row">
+                                    <span></span><em></em>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             CONTACT  (blush panel)
+        ========================================== -->
+
+        <section
+            class="contact section-shell"
+            id="contact"
+            data-spy="contact"
+        >
+
+
+            <div class="panel panel-pink contact-panel reveal">
+
+
+                <!-- Deco arch (replaces a photo) -->
+
+                <svg
+                    class="contact-arch"
+                    viewBox="0 0 200 240"
+                    aria-hidden="true"
+                >
+
+                    <defs>
+
+                        <linearGradient
+                            id="archFill"
+                            x1="0"
+                            y1="0"
+                            x2="0"
+                            y2="1"
+                        >
+                            <stop offset="0" stop-color="#4b1a41"/>
+                            <stop offset="1" stop-color="#1b0919"/>
+                        </linearGradient>
+
+                        <clipPath id="archClip">
+                            <path d="M4 240V100a96 96 0 0 1 192 0V240Z"/>
+                        </clipPath>
+
+                    </defs>
+
+                    <path
+                        d="M4 240V100a96 96 0 0 1 192 0V240Z"
+                        fill="url(#archFill)"
+                    />
+
+                    <g
+                        clip-path="url(#archClip)"
+                        fill="none"
+                        stroke="#cfae78"
+                        stroke-width="1.1"
+                        stroke-linecap="round"
+                        opacity=".85"
+                    >
+
+                        <path d="M84.2 193.2L-18.2 175.2M85.6 189.0L17.3 155.7M88.1 185.3L10.8 115.7M91.5 182.4L51.2 118.0M95.6 180.6L66.9 80.6M100.0 180.0L100.0 104.0M104.4 180.6L133.1 80.6M108.5 182.4L148.8 118.0M111.9 185.3L189.2 115.7M114.4 189.0L182.7 155.7M115.8 193.2L218.2 175.2"/>
+
+                        <path d="M60 196a40 40 0 0 1 80 0"/>
+
+                        <path d="M40 196a60 60 0 0 1 120 0"/>
+
+                        <path d="M4 196H196"/>
+
+                    </g>
+
+                    <path
+                        d="M4 240V100a96 96 0 0 1 192 0V240"
+                        fill="none"
+                        stroke="#cfae78"
+                        stroke-width="1.4"
+                    />
+
+                    <path
+                        d="M14 240V102a86 86 0 0 1 172 0V240"
+                        fill="none"
+                        stroke="#cfae78"
+                        stroke-opacity=".5"
+                    />
+
+                    <text
+                        x="100"
+                        y="66"
+                        text-anchor="middle"
+                        fill="#e6cfa0"
+                        font-family="'Cormorant Garamond', Georgia, serif"
+                        font-size="30"
+                    >&lt;/&gt;</text>
+
+                </svg>
+
+
+                <!-- Contact message -->
+
+                <div class="contact-main">
+
+
+                    <p class="eyebrow">
+                        LET'S CONNECT
+                    </p>
+
+
+                    <h2>
+
+                        Have a project
+
+                        <em>
+                            worth building?
+                        </em>
+
+                    </h2>
+
+
+                    <p>
+
+                        Have an idea, system or website
+                        in mind? Let's turn it into
+                        something functional.
+
+                    </p>
+
+
+                    <a
+                        href="work.with.jessda@gmail.com"
+                        class="button button-dark magnetic"
+                    >
+
+                        Let's work together
+
+                        <span aria-hidden="true">
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- Contact details -->
+
+                <div class="contact-details">
+
+
+                    <div>
+
+                        <i
+                            class="fa-regular fa-envelope"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span class="sr-only">
+                            Email
+                        </span>
+
+                        <a
+                            href="work.with.jessda@gmail.com"
+                        >
+                            work.with.jessda@gmail.com
+                        </a>
+
+                    </div>
+
+
+                    <div>
+
+                        <i
+                            class="fa-brands fa-github"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span class="sr-only">
+                            GitHub
+                        </span>
+
+                        <a href="#">
+                            github.com/Jessy-Gurl
+                        </a>
+
+                    </div>
+
+
+                    <div>
+
+                        <i
+                            class="fa-solid fa-location-dot"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span class="sr-only">
+                            Location
+                        </span>
+
+                        <p>
+                            Philippines · Available worldwide
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="site-footer section-shell">
+
+
+        <p>
+
+            © 2026 JDA.
+            Built with code &amp; curiosity.
+
+        </p>
+
+
+        <a
+            href="#top"
+            class="footer-crest"
+            aria-label="Back to top"
+        >
+
+            <svg
+                class="crest"
+                viewBox="0 0 240 84"
+                aria-hidden="true"
+            >
+                <use href="#crest"/>
+            </svg>
+
+        </a>
+
+
+        <a
+            href="#top"
+            class="back-top"
+        >
+            
+        </a>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+         index.html is inside /html
+         js is one folder above
+    ========================================== -->
+
+    <script
+        src="script.js"
+    ></script>
+
+
+</body>
+
+</html>
